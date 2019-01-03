@@ -1,8 +1,8 @@
-$(function () {
-    $('button[type="submit"]').click(function () {
-        $.post(webroot + "auth-api", {
-            username: $('input[name="username"]').val(),
-            password: $('input[name="password"]').val()
+jQuery(function () {
+    jQuery('button[type="submit"]').click(function () {
+        jQuery.post(webroot + "auth-api", {
+            username: jQuery('input[name="username"]').val(),
+            password: jQuery('input[name="password"]').val()
         }, function (response) {
 
             if (response.data.length !== 0) {
