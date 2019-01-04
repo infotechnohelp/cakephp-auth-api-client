@@ -1,5 +1,5 @@
 jQuery(function () {
-    jQuery('button[type="submit"]').click(function () {
+    jQuery('form[login]>button[type="submit"], button[login]').click(function () {
         jQuery.post(webroot + "auth-api", {
             username: jQuery('input[name="username"]').val(),
             password: jQuery('input[name="password"]').val()
@@ -16,8 +16,7 @@ jQuery(function () {
             }
 
         }, 'json').fail(function (xhr, status, error) {
-            $('div[error]').children('span').text(xhr.responseJSON.message);
-            $('div[error]').finish().slideDown(1000).delay(1000).slideUp(1000);
+            $(document).trigger('loginError', xhr.responseJSON.message);
         });
     });
 });

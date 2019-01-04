@@ -4,4 +4,4 @@
 
 `login.js` requires `var/const webroot, var/const homePageUrl`
 
-`login.js` requires `var/const webroot`
+`logout.js` requires `var/const webroot`
